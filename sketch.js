@@ -4,8 +4,8 @@ var database
 
 function preload()
 {
-  dog = loadImage("sprites/dogImg.png");
-  happyDog = loadImage("sprites/dogImg1.png");
+  dog = loadImage("../images/dogImg.png");
+  happyDog = loadImage("../images/dogImg1.png");
 }
 
 function setup() {
@@ -22,7 +22,7 @@ function setup() {
 
 
 function draw() { 
-  background(46, 139, 87); 
+  background("pink"); 
 
   if(keyWentDown(UP_ARROW)){
     writeStock(foodS)
