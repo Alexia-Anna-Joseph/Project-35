@@ -1,6 +1,7 @@
 var dog,happyDog;
 var  foodS, foodStock;
 var database
+var dogImg
 
 function preload()
 {
@@ -15,6 +16,8 @@ function setup() {
   dog.addImage(dog);
   dog.scale=0.15;
 
+  
+
   foodStock=database.ref('Food');
   foodStock.on("value",readStock);
   
@@ -22,10 +25,10 @@ function setup() {
 
 
 function draw() { 
-  background("pink"); 
 
-  if(keyWentDown(UP_ARROW)){
-    writeStock(foodS)
+    
+    if (keyWentDown(UP_ARROW)){
+      writeStock(foodS)
     dog.addImage(happyDog);
 
     fill(255,255,254);
@@ -33,9 +36,12 @@ function draw() {
     stroke(2);
     text("PRESS UP ARROW KEY TO FEED THE DOG!")
 
+    
+
     function readStock(data){
       foodS=data.val();
     }
+
 
     function writeStock(x){
 
