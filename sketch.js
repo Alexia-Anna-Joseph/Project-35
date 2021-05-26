@@ -11,16 +11,17 @@ function preload()
 }
 
 function setup() {
-	createCanvas(500, 500);
-  background
-
   database=firebase.database();
+	createCanvas(500, 500);
+  
+
+  
 
   dog=createSprite(200,400,150,150)
-  dog.addImage(dog);
+  dog.addImage(dogImg);
   dog.scale=0.15;
 
-  database=firebase.database();
+  
 
   
 
@@ -31,24 +32,26 @@ function setup() {
 
 
 function draw() { 
-  background(0);
+  background("skyblue");
     
+  fill(0);
+    textSize(15);
+    stroke(2);
+    text("PRESS UP ARROW KEY TO FEED THE DOG!",120,20)
+    text("food  :  "+foodS,200,200)
+
     if (keyWentDown(UP_ARROW)){
       writeStock(foodS)
     dog.addImage(happyDog);
-    dog.addImage(dogImg);
-
-
-    fill(255,255,254);
-    textSize(15);
-    stroke(2);
-    text("PRESS UP ARROW KEY TO FEED THE DOG!")
-
     
 
+
+    
+    
+    
     
     }
-  
+    drawSprites();
   }
 
   function readStock(data){
@@ -69,7 +72,7 @@ function draw() {
       Food:x
     })
 
-  drawSprites();
+  
   //add styles here
 
   
